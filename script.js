@@ -92,4 +92,20 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
+
+  //37
+  const task37Buttons = document.querySelectorAll("[data-js='t37-buttons'] .btn");
+  const task37Output = document.querySelector("[data-js='t37-out']");
+
+  if (task37Buttons.length > 0 && task37Output) {
+    task37Buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const groupId = button.dataset.groupId;
+        const group = groupsData.groups.find((group) => group.id === groupId);
+        if (!group) return;
+
+        task37Output.textContent = `Студентов: ${group.students.length}`;
+      });
+    });
+  }
 });
