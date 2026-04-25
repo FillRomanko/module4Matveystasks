@@ -108,4 +108,39 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  //38
+  const task38Buttons = document.querySelectorAll("[data-js='t38-buttons'] .btn[data-group-id]");
+  const task38PickButton = document.querySelector("[data-js='t38-pick']");
+  const task38Current = document.querySelector("[data-js='t38-current']");
+  const task38Output = document.querySelector("[data-js='t38-out']");
+
+  let task38CurrentGroupId = "britsp251";
+
+  const updateTask38CurrentText = () => {
+    const group = groupsData.groups.find((group) => group.id === task38CurrentGroupId);
+    if (!group || !task38Current) return;
+    task38Current.textContent = `Текущая группа: ${group.title}`;
+    task38Output.textContent = "Студент: -";
+  };
+
+  if (task38Buttons.length > 0 && task38PickButton && task38Current && task38Output) {
+    updateTask38CurrentText();
+
+    task38Buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        task38CurrentGroupId = button.dataset.groupId;
+        updateTask38CurrentText();
+      });
+    });
+
+    task38PickButton.addEventListener("click", () => {
+      const group = groupsData.groups.find((group) => group.id === task38CurrentGroupId);
+      if (!group) return;
+
+      const student = group.students[Math.floor(Math.random() * group.students.length)];
+      task38Output.textContent = `Студент: ${student.name}`;
+    });
+
+  }
 });
