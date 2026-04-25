@@ -72,5 +72,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //36
+  const task36Buttons = document.querySelectorAll("[data-js='t36-buttons'] .btn");
+  const task36List = document.querySelector("[data-js='t36-list']");
 
+  if (task36Buttons.length > 0 && task36List){
+    task36Buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const groupId = button.dataset.groupId;
+        const group = groupsData.groups.find((group) => group.id === groupId);
+
+        if (!group) return;
+
+        task36List.innerHTML = "";
+        group.students.forEach((student) => {
+          const li = document.createElement("li");
+          li.textContent = student.name;
+          task36List.append(li);
+        });
+      })
+    })
+  }
 });
