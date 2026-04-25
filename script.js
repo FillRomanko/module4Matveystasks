@@ -175,6 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const task40Count = document.querySelector("[data-js='t40-count']");
   const task40List = document.querySelector("[data-js='t40-list']");
 
+  let task40activeButton = task40Buttons[0];
+
   const renderTask40 = (groupId) => {
     if (!task40Count || !task40List) return;
 
@@ -190,7 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  let activeButton = task40Buttons[0];
   if (task40Buttons.length > 0 && task40Count && task40List) {
     renderTask40("britsp251");
 
@@ -198,10 +199,73 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener("click", () => {
         const groupId = button.dataset.groupId;
         renderTask40(groupId);
-        activeButton.classList.remove('is-active');
-        activeButton = button;
-        activeButton.classList.add('is-active');
+        task40activeButton.classList.remove('is-active');
+        task40activeButton = button;
+        task40activeButton.classList.add('is-active');
       });
+    });
+  }
+
+  //41
+  const task41Buttons = document.querySelectorAll("[data-js='t41-buttons'] .btn[data-group-id]");
+  const task41RandomButton = document.querySelector("[data-js='t41-random']");
+  const task41Count = document.querySelector("[data-js='t41-count']");
+  const task41RandomOut = document.querySelector("[data-js='t41-random-out']");
+  const task41Title = document.querySelector("[data-js='t41-title']");
+  const task41Curator = document.querySelector("[data-js='t41-curator']");
+  const task41List = document.querySelector("[data-js='t41-list']");
+
+  let task41CurrentGroupId = "britsp251";
+  let task41activeButton = task41Buttons[0];
+
+  const renderTask41Card = (group) => {
+    if (!task41Title || !task41Curator || !task41List) return;
+    task41Title.textContent = group.title;
+    task41Curator.textContent = `Куратор: ${groupsData.curator}`;
+    task41List.innerHTML = "";
+    group.students.forEach((student) => {
+      const li = document.createElement("li");
+      li.textContent = student.name;
+      task41List.append(li);
+    });
+    task41RandomOut.innerHTML = "Студент: -";
+  };
+
+  const renderTask41 = (groupId) => {
+    const group = groupsData.groups.find((group) => group.id === groupId);
+    if (!group || !task41Count) return;
+
+    task41CurrentGroupId = groupId;
+    task41Count.textContent = `Студентов: ${group.students.length}`;
+    renderTask41Card(group);
+  };
+
+  const pickTask41RandomStudent = () => {
+    if (!task41RandomOut) return;
+
+    const group = groupsData.groups.find((group) => group.id === task41CurrentGroupId);
+    if (!group) return;
+
+    const student = group.students[Math.floor(Math.random() * group.students.length)];
+    task41RandomOut.textContent = `Студент: ${student.name}`;
+  };
+
+  if (task41Buttons.length > 0 && task41RandomButton && task41Count && task41RandomOut && task41Title && task41Curator && task41List) {
+    renderTask41(task41CurrentGroupId);
+
+    task41Buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const groupId = button.dataset.groupId;
+        renderTask41(groupId);
+
+        task41activeButton.classList.remove('is-active');
+        task41activeButton = button;
+        task41activeButton.classList.add('is-active');
+      });
+    });
+
+    task41RandomButton.addEventListener("click", () => {
+      pickTask41RandomStudent();
     });
   }
 });
