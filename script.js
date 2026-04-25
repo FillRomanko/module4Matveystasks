@@ -141,6 +141,32 @@ document.addEventListener("DOMContentLoaded", () => {
       const student = group.students[Math.floor(Math.random() * group.students.length)];
       task38Output.textContent = `Студент: ${student.name}`;
     });
+  }
 
+  //39
+  const task39Buttons = document.querySelectorAll("[data-js='t39-buttons'] .btn");
+  const task39Title = document.querySelector("[data-js='t39-title']");
+  const task39Curator = document.querySelector("[data-js='t39-curator']");
+  const task39List = document.querySelector("[data-js='t39-list']");
+
+  if (task39Buttons.length > 0 && task39Title && task39Curator && task39List) {
+    task39Buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const groupId = button.dataset.groupId;
+        const group = groupsData.groups.find((group) => group.id === groupId);
+        if (!group) return;
+
+        if (!task39Title || !task39Curator || !task39List) return;
+
+        task39Title.textContent = group.title;
+        task39Curator.textContent = `Куратор: ${groupsData.curator}`;
+        task39List.innerHTML = "";
+        group.students.forEach((student) => {
+          const li = document.createElement("li");
+          li.textContent = student.name;
+          task39List.append(li);
+        });
+      });
+    });
   }
 });
