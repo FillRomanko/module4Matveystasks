@@ -169,4 +169,39 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  //40
+  const task40Buttons = document.querySelectorAll("[data-js='t40-buttons'] .btn");
+  const task40Count = document.querySelector("[data-js='t40-count']");
+  const task40List = document.querySelector("[data-js='t40-list']");
+
+  const renderTask40 = (groupId) => {
+    if (!task40Count || !task40List) return;
+
+    const group = groupsData.groups.find((group) => group.id === groupId);
+    if (!group) return;
+
+    task40Count.textContent = `Студентов: ${group.students.length}`;
+    task40List.innerHTML = "";
+    group.students.forEach((student) => {
+      const li = document.createElement("li");
+      li.textContent = student.name;
+      task40List.append(li);
+    });
+  };
+
+  let activeButton = task40Buttons[0];
+  if (task40Buttons.length > 0 && task40Count && task40List) {
+    renderTask40("britsp251");
+
+    task40Buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const groupId = button.dataset.groupId;
+        renderTask40(groupId);
+        activeButton.classList.remove('is-active');
+        activeButton = button;
+        activeButton.classList.add('is-active');
+      });
+    });
+  }
 });
