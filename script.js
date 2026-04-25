@@ -55,4 +55,22 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ],
   };
+
+  //35
+  const task35Button = document.querySelector("[data-js='t35-show']");
+  const task35List = document.querySelector("[data-js='t35-list']");
+
+  if (task35Button && task35List){
+    task35Button.addEventListener("click", () => {
+      task35List.innerHTML = "";
+      groupsData.groups.forEach((group) => {
+        const li = document.createElement("li");
+        li.textContent = group.title;
+        task35List.appendChild(li);
+      });
+    });
+  }
+
+  //36
+
 });

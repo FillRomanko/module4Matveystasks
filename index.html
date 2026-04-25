@@ -1,351 +1,351 @@
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Песочница</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-  </head>
-  <body>
-    <section class="task" id="task-35">
-      <div class="task__header">
-        <h2 class="task__title">Задача 35 — Вывести названия всех групп</h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже есть кнопка [data-js='t35-show'] и список [data-js='t35-list']. Сначала найди их через querySelector. Потом повесь addEventListener('click') на кнопку. В обработчике возьми массив groupsData.groups, пройдись по нему через forEach, для каждой группы создай li через document.createElement('li'), запиши название в li.textContent и добавь элемент в готовый список через append или appendChild."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        По кнопке покажи названия всех групп из объекта с данными.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <button class="btn" data-js="t35-show" type="button">
-              Показать группы
-            </button>
-            <ol class="student-list" data-js="t35-list"></ol>
-          </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <ol class="student-list">
-              <li>БРИЦП251</li>
-              <li>БРИЦП252</li>
-            </ol>
+  <!doctype html>
+  <html lang="ru">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Песочница</title>
+      <link rel="stylesheet" href="styles/styles.css" />
+    </head>
+    <body>
+      <section class="task" id="task-35">
+        <div class="task__header">
+          <h2 class="task__title">Задача 35 — Вывести названия всех групп</h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже есть кнопка [data-js='t35-show'] и список [data-js='t35-list']. Сначала найди их через querySelector. Потом повесь addEventListener('click') на кнопку. В обработчике возьми массив groupsData.groups, пройдись по нему через forEach, для каждой группы создай li через document.createElement('li'), запиши название в li.textContent и добавь элемент в готовый список через append или appendChild."
+            >?</span
+          >
+        </div>
+        <p class="task__desc">
+          По кнопке покажи названия всех групп из объекта с данными.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <button class="btn" data-js="t35-show" type="button">
+                Показать группы
+              </button>
+              <ol class="student-list" data-js="t35-list"></ol>
+            </div>
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <ol class="student-list">
+                <li>БРИЦП251</li>
+                <li>БРИЦП252</li>
+              </ol>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="task" id="task-36">
-      <div class="task__header">
-        <h2 class="task__title">
-          Задача 36 — Показать студентов выбранной группы
-        </h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже есть контейнер с кнопками [data-js='t36-buttons'] и список [data-js='t36-list']. Найди все кнопки через querySelectorAll, а список через querySelector. Для каждой кнопки повесь addEventListener('click'). Внутри обработчика возьми button.dataset.groupId, найди нужную группу через groupsData.groups.find(...), очисти список через innerHTML = '' и затем пройдись по group.students через forEach. Для каждого студента создай li, запиши имя в textContent и добавь его в уже готовый список."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        Выбери группу и выведи на экран всех студентов этой группы.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <div class="row" data-js="t36-buttons">
-              <button class="btn" data-group-id="britsp251" type="button">
-                БРИЦП251
-              </button>
-              <button class="btn" data-group-id="britsp252" type="button">
-                БРИЦП252
-              </button>
-            </div>
-            <ol class="student-list" data-js="t36-list"></ol>
-          </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <ol class="student-list">
-              <li>Абеленцев Марк</li>
-              <li>Бородин Александр</li>
-              <li>Казазян Арина</li>
-              <li>Карпив Полина</li>
-              <li>...</li>
-            </ol>
-          </div>
+      <section class="task" id="task-36">
+        <div class="task__header">
+          <h2 class="task__title">
+            Задача 36 — Показать студентов выбранной группы
+          </h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже есть контейнер с кнопками [data-js='t36-buttons'] и список [data-js='t36-list']. Найди все кнопки через querySelectorAll, а список через querySelector. Для каждой кнопки повесь addEventListener('click'). Внутри обработчика возьми button.dataset.groupId, найди нужную группу через groupsData.groups.find(...), очисти список через innerHTML = '' и затем пройдись по group.students через forEach. Для каждого студента создай li, запиши имя в textContent и добавь его в уже готовый список."
+            >?</span
+          >
         </div>
-      </div>
-    </section>
-
-    <section class="task" id="task-37">
-      <div class="task__header">
-        <h2 class="task__title">Задача 37 — Показать количество студентов</h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже есть кнопки внутри [data-js='t37-buttons'] и output [data-js='t37-out']. Найди кнопки через querySelectorAll и output через querySelector. По клику на кнопку получи data-group-id, найди группу через find(), возьми количество студентов через group.students.length и выведи строку в готовый output через textContent, например: 'Студентов: ' + group.students.length."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        По кнопке покажи, сколько студентов находится в выбранной группе.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <div class="row" data-js="t37-buttons">
-              <button class="btn" data-group-id="britsp251" type="button">
-                Посчитать БРИЦП251
-              </button>
-              <button class="btn" data-group-id="britsp252" type="button">
-                Посчитать БРИЦП252
-              </button>
+        <p class="task__desc">
+          Выбери группу и выведи на экран всех студентов этой группы.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <div class="row" data-js="t36-buttons">
+                <button class="btn" data-group-id="britsp251" type="button">
+                  БРИЦП251
+                </button>
+                <button class="btn" data-group-id="britsp252" type="button">
+                  БРИЦП252
+                </button>
+              </div>
+              <ol class="student-list" data-js="t36-list"></ol>
             </div>
-            <output class="pill mono" data-js="t37-out">Студентов: —</output>
-          </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <output class="pill mono">Студентов: 17</output>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="task" id="task-38">
-      <div class="task__header">
-        <h2 class="task__title">
-          Задача 38 — Случайный студент из выбранной группы
-        </h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже есть кнопки выбора группы внутри [data-js='t38-buttons'], кнопка [data-js='t38-pick'] и outputs [data-js='t38-current'] и [data-js='t38-out']. Найди эти элементы через querySelector / querySelectorAll. Создай переменную currentGroupId, чтобы хранить выбранную группу. По клику на кнопку группы обновляй currentGroupId и текст в [data-js='t38-current']. По клику на кнопку случайного выбора найди группу через find(), получи случайный индекс через Math.floor(Math.random() * group.students.length), возьми студента из массива и выведи его имя в [data-js='t38-out'] через textContent."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        Выбери группу и получи одного случайного студента из её списка.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <div class="row" data-js="t38-buttons">
-              <button class="btn" data-group-id="britsp251" type="button">
-                Выбрать БРИЦП251
-              </button>
-              <button class="btn" data-group-id="britsp252" type="button">
-                Выбрать БРИЦП252
-              </button>
-              <button class="btn" data-js="t38-pick" type="button">
-                Случайный студент
-              </button>
-            </div>
-            <output class="pill mono" data-js="t38-current"
-              >Текущая группа: БРИЦП251</output
-            >
-            <output class="pill mono" data-js="t38-out">Студент: —</output>
-          </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <output class="pill mono">Текущая группа: БРИЦП252</output>
-            <output class="pill mono">Студент: Курпаяниди Эллина</output>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="task" id="task-39">
-      <div class="task__header">
-        <h2 class="task__title">Задача 39 — Карточка группы</h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже есть кнопки в [data-js='t39-buttons'] и готовая карточка с элементами [data-js='t39-title'], [data-js='t39-curator'] и [data-js='t39-list']. Найди их через querySelector / querySelectorAll. По клику на кнопку получай data-group-id, находи группу через find() и заполняй уже готовую карточку: title.textContent = group.title, curator.textContent = 'Куратор: ...'. Список студентов сначала очисти через innerHTML = '', затем через forEach создай li для каждого студента и добавь его в [data-js='t39-list']."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        По кнопке отрисуй карточку группы: название, куратора и список
-        студентов.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <div class="row" data-js="t39-buttons">
-              <button class="btn" data-group-id="britsp251" type="button">
-                Показать БРИЦП251
-              </button>
-              <button class="btn" data-group-id="britsp252" type="button">
-                Показать БРИЦП252
-              </button>
-            </div>
-            <article class="item-card group-card" data-js="t39-card">
-              <h3 class="item-card__title" data-js="t39-title">
-                Название группы
-              </h3>
-              <p class="item-card__desc" data-js="t39-curator">Куратор: —</p>
-              <ol
-                class="student-list student-list--compact"
-                data-js="t39-list"
-              ></ol>
-            </article>
-          </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <article class="item-card group-card">
-              <h3 class="item-card__title">БРИЦП252</h3>
-              <p class="item-card__desc">Куратор: Глазунова</p>
-              <ol class="student-list student-list--compact">
-                <li>Белов Александр</li>
-                <li>Борисова Виктория</li>
-                <li>Бухарина Василиса</li>
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <ol class="student-list">
+                <li>Абеленцев Марк</li>
+                <li>Бородин Александр</li>
+                <li>Казазян Арина</li>
+                <li>Карпив Полина</li>
                 <li>...</li>
               </ol>
-            </article>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="task" id="task-40">
-      <div class="task__header">
-        <h2 class="task__title">
-          Задача 40 — Переключение между двумя группами
-        </h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже есть две кнопки внутри [data-js='t40-buttons'], output [data-js='t40-count'] и список [data-js='t40-list']. Найди их через querySelector / querySelectorAll. Сделай отдельную функцию render(groupId), которая через find() получает группу, обновляет count через textContent и заново заполняет список студентов. Для активной кнопки можно использовать classList.add / classList.remove или classList.toggle. По клику на кнопку вызывай render(button.dataset.groupId)."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        Сделай переключатель между группами и обновляй контент по клику.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <div class="row" data-js="t40-buttons">
-              <button
-                class="btn is-active"
-                data-group-id="britsp251"
-                type="button"
-              >
-                БРИЦП251
-              </button>
-              <button class="btn" data-group-id="britsp252" type="button">
-                БРИЦП252
-              </button>
+      <section class="task" id="task-37">
+        <div class="task__header">
+          <h2 class="task__title">Задача 37 — Показать количество студентов</h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже есть кнопки внутри [data-js='t37-buttons'] и output [data-js='t37-out']. Найди кнопки через querySelectorAll и output через querySelector. По клику на кнопку получи data-group-id, найди группу через find(), возьми количество студентов через group.students.length и выведи строку в готовый output через textContent, например: 'Студентов: ' + group.students.length."
+            >?</span
+          >
+        </div>
+        <p class="task__desc">
+          По кнопке покажи, сколько студентов находится в выбранной группе.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <div class="row" data-js="t37-buttons">
+                <button class="btn" data-group-id="britsp251" type="button">
+                  Посчитать БРИЦП251
+                </button>
+                <button class="btn" data-group-id="britsp252" type="button">
+                  Посчитать БРИЦП252
+                </button>
+              </div>
+              <output class="pill mono" data-js="t37-out">Студентов: —</output>
             </div>
-            <output class="pill mono" data-js="t40-count">Студентов: —</output>
-            <ol class="student-list" data-js="t40-list"></ol>
-          </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <div class="row">
-              <button class="btn" type="button">БРИЦП251</button>
-              <button class="btn is-active" type="button">БРИЦП252</button>
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <output class="pill mono">Студентов: 17</output>
             </div>
-            <output class="pill mono">Студентов: 18</output>
-            <ol class="student-list">
-              <li>Белов Александр</li>
-              <li>Борисова Виктория</li>
-              <li>Бухарина Василиса</li>
-              <li>...</li>
-            </ol>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="task" id="task-41">
-      <div class="task__header">
-        <h2 class="task__title">Задача 41 — Мини-справочник групп</h2>
-        <span
-          class="hint"
-          tabindex="0"
-          aria-label="Подсказка"
-          title="В HTML уже предсозданы все нужные элементы: кнопки в [data-js='t41-buttons'], кнопка [data-js='t41-random'], outputs [data-js='t41-count'] и [data-js='t41-random-out'], карточка и её части [data-js='t41-title'], [data-js='t41-curator'], [data-js='t41-list']. Удобно разбить решение на маленькие функции: getGroupById(id) через find(), renderList(list, students) через innerHTML = '' + forEach + createElement('li'), renderCard(group) через textContent, render(groupId) для общего обновления интерфейса. Для случайного студента используй Math.floor(Math.random() * group.students.length). По клику на кнопки переключай активную группу, обновляй count, карточку и результат случайного выбора."
-          >?</span
-        >
-      </div>
-      <p class="task__desc">
-        Собери мини-справочник по двум группам: переключение, количество и
-        карточка с данными.
-      </p>
-      <div class="task-area">
-        <div class="task-grid">
-          <div class="task-panel">
-            <div class="row" data-js="t41-buttons">
-              <button
-                class="btn is-active"
-                data-group-id="britsp251"
-                type="button"
+      <section class="task" id="task-38">
+        <div class="task__header">
+          <h2 class="task__title">
+            Задача 38 — Случайный студент из выбранной группы
+          </h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже есть кнопки выбора группы внутри [data-js='t38-buttons'], кнопка [data-js='t38-pick'] и outputs [data-js='t38-current'] и [data-js='t38-out']. Найди эти элементы через querySelector / querySelectorAll. Создай переменную currentGroupId, чтобы хранить выбранную группу. По клику на кнопку группы обновляй currentGroupId и текст в [data-js='t38-current']. По клику на кнопку случайного выбора найди группу через find(), получи случайный индекс через Math.floor(Math.random() * group.students.length), возьми студента из массива и выведи его имя в [data-js='t38-out'] через textContent."
+            >?</span
+          >
+        </div>
+        <p class="task__desc">
+          Выбери группу и получи одного случайного студента из её списка.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <div class="row" data-js="t38-buttons">
+                <button class="btn" data-group-id="britsp251" type="button">
+                  Выбрать БРИЦП251
+                </button>
+                <button class="btn" data-group-id="britsp252" type="button">
+                  Выбрать БРИЦП252
+                </button>
+                <button class="btn" data-js="t38-pick" type="button">
+                  Случайный студент
+                </button>
+              </div>
+              <output class="pill mono" data-js="t38-current"
+                >Текущая группа: БРИЦП251</output
               >
-                БРИЦП251
-              </button>
-              <button class="btn" data-group-id="britsp252" type="button">
-                БРИЦП252
-              </button>
-              <button class="btn" data-js="t41-random" type="button">
-                Случайный студент
-              </button>
+              <output class="pill mono" data-js="t38-out">Студент: —</output>
             </div>
-            <div class="row">
-              <output class="pill mono" data-js="t41-count"
-                >Студентов: —</output
-              >
-              <output class="pill mono" data-js="t41-random-out"
-                >Студент: —</output
-              >
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <output class="pill mono">Текущая группа: БРИЦП252</output>
+              <output class="pill mono">Студент: Курпаяниди Эллина</output>
             </div>
-            <article class="item-card group-card" data-js="t41-card">
-              <h3 class="item-card__title" data-js="t41-title">
-                Название группы
-              </h3>
-              <p class="item-card__desc" data-js="t41-curator">Куратор: —</p>
-              <ol
-                class="student-list student-list--compact"
-                data-js="t41-list"
-              ></ol>
-            </article>
           </div>
-          <div class="task-panel task-target">
-            <p class="task-target__label">Целевой вид</p>
-            <div class="row">
-              <button class="btn" type="button">БРИЦП251</button>
-              <button class="btn is-active" type="button">БРИЦП252</button>
-              <button class="btn" type="button">Случайный студент</button>
+        </div>
+      </section>
+
+      <section class="task" id="task-39">
+        <div class="task__header">
+          <h2 class="task__title">Задача 39 — Карточка группы</h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже есть кнопки в [data-js='t39-buttons'] и готовая карточка с элементами [data-js='t39-title'], [data-js='t39-curator'] и [data-js='t39-list']. Найди их через querySelector / querySelectorAll. По клику на кнопку получай data-group-id, находи группу через find() и заполняй уже готовую карточку: title.textContent = group.title, curator.textContent = 'Куратор: ...'. Список студентов сначала очисти через innerHTML = '', затем через forEach создай li для каждого студента и добавь его в [data-js='t39-list']."
+            >?</span
+          >
+        </div>
+        <p class="task__desc">
+          По кнопке отрисуй карточку группы: название, куратора и список
+          студентов.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <div class="row" data-js="t39-buttons">
+                <button class="btn" data-group-id="britsp251" type="button">
+                  Показать БРИЦП251
+                </button>
+                <button class="btn" data-group-id="britsp252" type="button">
+                  Показать БРИЦП252
+                </button>
+              </div>
+              <article class="item-card group-card" data-js="t39-card">
+                <h3 class="item-card__title" data-js="t39-title">
+                  Название группы
+                </h3>
+                <p class="item-card__desc" data-js="t39-curator">Куратор: —</p>
+                <ol
+                  class="student-list student-list--compact"
+                  data-js="t39-list"
+                ></ol>
+              </article>
             </div>
-            <div class="row">
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <article class="item-card group-card">
+                <h3 class="item-card__title">БРИЦП252</h3>
+                <p class="item-card__desc">Куратор: Глазунова</p>
+                <ol class="student-list student-list--compact">
+                  <li>Белов Александр</li>
+                  <li>Борисова Виктория</li>
+                  <li>Бухарина Василиса</li>
+                  <li>...</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="task" id="task-40">
+        <div class="task__header">
+          <h2 class="task__title">
+            Задача 40 — Переключение между двумя группами
+          </h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже есть две кнопки внутри [data-js='t40-buttons'], output [data-js='t40-count'] и список [data-js='t40-list']. Найди их через querySelector / querySelectorAll. Сделай отдельную функцию render(groupId), которая через find() получает группу, обновляет count через textContent и заново заполняет список студентов. Для активной кнопки можно использовать classList.add / classList.remove или classList.toggle. По клику на кнопку вызывай render(button.dataset.groupId)."
+            >?</span
+          >
+        </div>
+        <p class="task__desc">
+          Сделай переключатель между группами и обновляй контент по клику.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <div class="row" data-js="t40-buttons">
+                <button
+                  class="btn is-active"
+                  data-group-id="britsp251"
+                  type="button"
+                >
+                  БРИЦП251
+                </button>
+                <button class="btn" data-group-id="britsp252" type="button">
+                  БРИЦП252
+                </button>
+              </div>
+              <output class="pill mono" data-js="t40-count">Студентов: —</output>
+              <ol class="student-list" data-js="t40-list"></ol>
+            </div>
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <div class="row">
+                <button class="btn" type="button">БРИЦП251</button>
+                <button class="btn is-active" type="button">БРИЦП252</button>
+              </div>
               <output class="pill mono">Студентов: 18</output>
-              <output class="pill mono">Студент: Борисова Виктория</output>
-            </div>
-            <article class="item-card group-card">
-              <h3 class="item-card__title">БРИЦП252</h3>
-              <p class="item-card__desc">Куратор: Глазунова</p>
-              <ol class="student-list student-list--compact">
+              <ol class="student-list">
                 <li>Белов Александр</li>
                 <li>Борисова Виктория</li>
                 <li>Бухарина Василиса</li>
                 <li>...</li>
               </ol>
-            </article>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <script src="./tooltip.js" defer></script>
-    <script src="./script.js" defer></script>
-  </body>
-</html>
+      </section>
+
+      <section class="task" id="task-41">
+        <div class="task__header">
+          <h2 class="task__title">Задача 41 — Мини-справочник групп</h2>
+          <span
+            class="hint"
+            tabindex="0"
+            aria-label="Подсказка"
+            title="В HTML уже предсозданы все нужные элементы: кнопки в [data-js='t41-buttons'], кнопка [data-js='t41-random'], outputs [data-js='t41-count'] и [data-js='t41-random-out'], карточка и её части [data-js='t41-title'], [data-js='t41-curator'], [data-js='t41-list']. Удобно разбить решение на маленькие функции: getGroupById(id) через find(), renderList(list, students) через innerHTML = '' + forEach + createElement('li'), renderCard(group) через textContent, render(groupId) для общего обновления интерфейса. Для случайного студента используй Math.floor(Math.random() * group.students.length). По клику на кнопки переключай активную группу, обновляй count, карточку и результат случайного выбора."
+            >?</span
+          >
+        </div>
+        <p class="task__desc">
+          Собери мини-справочник по двум группам: переключение, количество и
+          карточка с данными.
+        </p>
+        <div class="task-area">
+          <div class="task-grid">
+            <div class="task-panel">
+              <div class="row" data-js="t41-buttons">
+                <button
+                  class="btn is-active"
+                  data-group-id="britsp251"
+                  type="button"
+                >
+                  БРИЦП251
+                </button>
+                <button class="btn" data-group-id="britsp252" type="button">
+                  БРИЦП252
+                </button>
+                <button class="btn" data-js="t41-random" type="button">
+                  Случайный студент
+                </button>
+              </div>
+              <div class="row">
+                <output class="pill mono" data-js="t41-count"
+                  >Студентов: —</output
+                >
+                <output class="pill mono" data-js="t41-random-out"
+                  >Студент: —</output
+                >
+              </div>
+              <article class="item-card group-card" data-js="t41-card">
+                <h3 class="item-card__title" data-js="t41-title">
+                  Название группы
+                </h3>
+                <p class="item-card__desc" data-js="t41-curator">Куратор: —</p>
+                <ol
+                  class="student-list student-list--compact"
+                  data-js="t41-list"
+                ></ol>
+              </article>
+            </div>
+            <div class="task-panel task-target">
+              <p class="task-target__label">Целевой вид</p>
+              <div class="row">
+                <button class="btn" type="button">БРИЦП251</button>
+                <button class="btn is-active" type="button">БРИЦП252</button>
+                <button class="btn" type="button">Случайный студент</button>
+              </div>
+              <div class="row">
+                <output class="pill mono">Студентов: 18</output>
+                <output class="pill mono">Студент: Борисова Виктория</output>
+              </div>
+              <article class="item-card group-card">
+                <h3 class="item-card__title">БРИЦП252</h3>
+                <p class="item-card__desc">Куратор: Глазунова</p>
+                <ol class="student-list student-list--compact">
+                  <li>Белов Александр</li>
+                  <li>Борисова Виктория</li>
+                  <li>Бухарина Василиса</li>
+                  <li>...</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="./tooltip.js" defer></script>
+      <script src="./script.js" defer></script>
+    </body>
+  </html>
